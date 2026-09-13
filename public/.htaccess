@@ -1,0 +1,3 @@
+DirectoryIndex home.html index.html
+Options -Indexes -MultiViews
+ErrorDocument 404 /404.html
