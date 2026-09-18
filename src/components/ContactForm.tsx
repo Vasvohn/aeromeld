@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { useI18n } from "@/components/I18nProvider";
 import { sanitizeEmail } from "@/lib/security";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 function cleanName(value: string) {
   return value.replace(/\s+/g, " ").trim().slice(0, 80);
@@ -20,9 +21,11 @@ export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "missing" | "invalid" | "ok">("idle");
+  const [status, setStatus] = useState<"idle" | "missing" | "invalid" | "sending" | "ok" | "error">(
+    "idle",
+  );
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextName = cleanName(name);
     const nextEmail = sanitizeEmail(email);
@@ -31,10 +34,31 @@ export function ContactForm() {
       setStatus(!nextEmail && email.trim() ? "invalid" : "missing");
       return;
     }
-    setName("");
-    setEmail("");
-    setMessage("");
-    setStatus("ok");
+    setStatus("sending");
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: nextName,
+          email: nextEmail,
+          message: nextMessage,
+          _subject: `Contact Aeromeld — ${nextName}`,
+          _replyto: nextEmail,
+          _template: "table",
+        }),
+      });
+      if (!response.ok) throw new Error("send-failed");
+      setName("");
+      setEmail("");
+      setMessage("");
+      setStatus("ok");
+    } catch {
+      setStatus("error");
+    }
   }
 
   const fieldClass =
@@ -117,12 +141,18 @@ export function ContactForm() {
       <p className="mt-3 text-xs text-slate-500">{t("contact.requiredHint")}</p>
       <button
         type="submit"
-        className="mt-5 rounded-xl bg-sky-700 px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-sky-700/25 hover:bg-sky-800"
+        disabled={status === "sending"}
+        className="mt-5 rounded-xl bg-sky-700 px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-sky-700/25 hover:bg-sky-800 disabled:opacity-70"
       >
-        {t("contact.submit")}
+        {status === "sending" ? t("contact.sending") : t("contact.submit")}
       </button>
       {status === "missing" ? <p className="mt-3 text-sm font-medium text-red-700">{t("contact.missing")}</p> : null}
       {status === "invalid" ? <p className="mt-3 text-sm font-medium text-red-700">{t("contact.invalid")}</p> : null}
+      {status === "error" ? (
+        <p className="mt-3 text-sm font-medium text-red-700">
+          {t("contact.error").replace("{email}", CONTACT_EMAIL)}
+        </p>
+      ) : null}
     </form>
   );
 }

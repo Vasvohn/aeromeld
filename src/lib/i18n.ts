@@ -31,6 +31,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "contact.requiredHint": "Tous les champs sont obligatoires.",
     "contact.missing": "Merci de renseigner votre nom, votre adresse mail et votre message.",
     "contact.invalid": "Indiquez une adresse mail valide.",
+    "contact.sending": "Envoi…",
+    "contact.error": "L’envoi n’a pas abouti. Réessayez, le message part vers {email}.",
     "contact.ok": "Merci pour votre message. Nous vous répondrons dès que possible.",
     "contact.thanksTitle": "Merci !",
     "contact.thanks":
@@ -300,6 +302,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "contact.requiredHint": "All fields are required.",
     "contact.missing": "Please fill in your name, email address and message.",
     "contact.invalid": "Enter a valid email address.",
+    "contact.sending": "Sending…",
+    "contact.error": "The message could not be sent. Please try again. It goes to {email}.",
     "contact.ok": "Thank you for your message. We will get back to you as soon as possible.",
     "contact.thanksTitle": "Thank you!",
     "contact.thanks":
@@ -560,6 +564,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "contact.requiredHint": "Todos los campos son obligatorios.",
     "contact.missing": "Indique su nombre, correo electrónico y mensaje.",
     "contact.invalid": "Indique un correo electrónico válido.",
+    "contact.sending": "Enviando…",
+    "contact.error": "No se ha podido enviar. Inténtelo de nuevo. El mensaje va a {email}.",
     "contact.ok": "Gracias por su mensaje. Le responderemos lo antes posible.",
     "contact.thanksTitle": "¡Gracias!",
     "contact.thanks":
@@ -820,6 +826,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "contact.requiredHint": "Todos os campos são obrigatórios.",
     "contact.missing": "Indique o nome, o e-mail e a mensagem.",
     "contact.invalid": "Indique um e-mail válido.",
+    "contact.sending": "A enviar…",
+    "contact.error": "Não foi possível enviar. Tente novamente. A mensagem vai para {email}.",
     "contact.ok": "Obrigado pela sua mensagem. Responderemos o mais breve possível.",
     "contact.thanksTitle": "Obrigado!",
     "contact.thanks":
