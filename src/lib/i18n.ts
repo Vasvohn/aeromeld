@@ -264,7 +264,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.p1":
       "Nom commercial : Aeromeld. SIRET : 888 395 274 00028.",
     "legal.p2":
-      "Hébergeur actuel : GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis (service GitHub Pages). Hébergement prévu pour aeromeld.com : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.",
+      "Hébergeur : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France. Nom de domaine : aeromeld.com.",
     "legal.p3": "Contact :",
     "legal.p4":
       "Aeromeld est un intermédiaire d’information et d’affiliation. Les contrats de transport sont ceux des compagnies et agences partenaires. La réservation est conclue uniquement sur le site du partenaire.",
@@ -528,7 +528,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.p1":
       "Trade name: Aeromeld. SIRET: 888 395 274 00028.",
     "legal.p2":
-      "Current host: GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, United States (GitHub Pages). Planned hosting for aeromeld.com: OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.",
+      "Host: OVH SAS, 2 rue Kellermann, 59100 Roubaix, France. Domain name: aeromeld.com.",
     "legal.p3": "Contact:",
     "legal.p4":
       "Aeromeld is an information and affiliate intermediary. Transport contracts are those of the partner airlines and agencies. The booking is concluded only on the partner’s website.",
@@ -792,7 +792,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.p1":
       "Nombre comercial: Aeromeld. SIRET: 888 395 274 00028.",
     "legal.p2":
-      "Alojamiento actual: GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, Estados Unidos (GitHub Pages). Alojamiento previsto para aeromeld.com: OVH SAS, 2 rue Kellermann, 59100 Roubaix, Francia.",
+      "Alojamiento: OVH SAS, 2 rue Kellermann, 59100 Roubaix, Francia. Nombre de dominio: aeromeld.com.",
     "legal.p3": "Contacto:",
     "legal.p4":
       "Aeromeld es un intermediario de información y afiliación. Los contratos de transporte son de las compañías y agencias socias. La reserva se concluye solo en el sitio del socio.",
@@ -1056,7 +1056,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.p1":
       "Nome comercial: Aeromeld. SIRET: 888 395 274 00028.",
     "legal.p2":
-      "Alojamento atual: GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, Estados Unidos (GitHub Pages). Alojamento previsto para aeromeld.com: OVH SAS, 2 rue Kellermann, 59100 Roubaix, França.",
+      "Alojamento: OVH SAS, 2 rue Kellermann, 59100 Roubaix, França. Nome de domínio: aeromeld.com.",
     "legal.p3": "Contacto:",
     "legal.p4":
       "A Aeromeld é um intermediário de informação e afiliação. Os contratos de transporte são das companhias e agências parceiras. A reserva conclui-se apenas no site do parceiro.",
