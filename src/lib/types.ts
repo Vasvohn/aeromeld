@@ -1,4 +1,4 @@
-export type TripType = "roundtrip" | "oneway";
+export type TripType = "roundtrip" | "oneway" | "multicity";
 
 export type CabinClass = "economy" | "premium" | "business" | "first";
 

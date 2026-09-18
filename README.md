@@ -1,6 +1,6 @@
-# flyUs
+# Aeromeld
 
-Comparateur affilié de vols (MVP). Recherche → comparaison → redirection vers le partenaire avec identifiant d’affiliation.
+Comparateur affilié de vols. Recherche, comparaison, puis redirection vers le partenaire avec identifiant d’affiliation.
 
 **Site :** https://vasvohn.github.io/aeromeld  
 **Code :** https://github.com/Vasvohn/aeromeld
@@ -15,22 +15,18 @@ npm run dev
 
 Ouvrez [http://localhost:3000](http://localhost:3000).
 
-## Ce que contient le MVP
+## Fonctionnalités
 
-- Formulaire (départ, arrivée, dates, passagers, aller-retour / aller simple)
+- Formulaire (départ, arrivée, dates, passagers, aller-retour / aller simple / multi-destinations)
 - Autocomplétion d’aéroports (IATA)
 - Liste comparative (prix, durée, escales)
 - Bouton **Réserver** vers le partenaire (lien d’affiliation)
-- Pages destinations (SEO), mentions, confidentialité, cookies, divulgation d’affiliation
+- Pages destinations (SEO), guides longue traîne, mentions, confidentialité, cookies, divulgation d’affiliation
 
-Les tarifs du prototype sont **simulés** (déterministes selon l’itinéraire) pour avancer sans clés API. Les liens pointent déjà vers les moteurs partenaires avec `FLYUS_AFFILIATE_MARKER`.
+Les liens d’affiliation utilisent `FLYUS_AFFILIATE_MARKER` / Travelpayouts.
 
-## Brancher de vraies API
+## Partenaires
 
-1. Créez un compte [Travelpayouts](https://www.travelpayouts.com/) et récupérez votre `marker`.
+1. Compte [Travelpayouts](https://www.travelpayouts.com/) : renseignez le `marker`.
 2. Option vols live : [Amadeus for Developers](https://developers.amadeus.com/), Kiwi Tequila ou Duffel.
 3. Placez les clés dans `.env.local`.
-
-## Niche retenue pour v1
-
-Comparateur **vols** (pas encore hôtels / voitures), avec transparence totale sur la redirection partenaire.

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { AffiliateBanner } from "@/components/AffiliateBanner";
 import { ExtraPartnerOffers } from "@/components/ExtraPartnerOffers";
 import { PriceAlert } from "@/components/PriceAlert";
@@ -8,6 +9,7 @@ import { SearchForm } from "@/components/SearchForm";
 import { StayCompare } from "@/components/StayCompare";
 import { useI18n } from "@/components/I18nProvider";
 import { DESTINATIONS } from "@/lib/destinations";
+import { guidesForRoute } from "@/lib/guides";
 import { formatPrice } from "@/lib/search";
 
 function plusDays(n: number) {
@@ -22,6 +24,7 @@ export function DestinationDetail({ slug }: { slug: string }) {
   if (!dest) return null;
   const checkin = plusDays(21);
   const checkout = plusDays(28);
+  const guides = guidesForRoute(dest.from, dest.to);
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-12">
@@ -53,6 +56,22 @@ export function DestinationDetail({ slug }: { slug: string }) {
           }}
         />
       </Reveal>
+      {guides.length > 0 ? (
+        <Reveal className="mt-8" delayMs={130}>
+          <section className="rounded-3xl border border-sky-100 bg-sky-50/80 p-5">
+            <h2 className="text-lg font-semibold text-slate-900">{t("dest.guides")}</h2>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              {guides.map((guide) => (
+                <li key={guide.slug}>
+                  <Link href={`/guides/${guide.slug}`} className="text-sm font-medium text-sky-800 hover:underline">
+                    {guide.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </Reveal>
+      ) : null}
       <Reveal className="mt-6" delayMs={140}>
         <PriceAlert from={dest.from} to={dest.to} destination={dest.title} />
       </Reveal>

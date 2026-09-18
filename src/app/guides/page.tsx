@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SearchForm } from "@/components/SearchForm";
 import { GUIDE_CLUSTERS, GUIDES, type GuideClusterId } from "@/lib/guides";
 
 export const metadata: Metadata = {
@@ -21,6 +22,9 @@ export default function GuidesPage() {
         Aeromeld ne vise pas « billet d’avion Maroc ». Chaque article répond à une question précise (compagnie +
         bagage, période, aéroport) puis place le comparateur de vols, les hôtels et la location auto.
       </p>
+      <div className="mt-8">
+        <SearchForm compact />
+      </div>
       <div className="mt-10 space-y-12">
         {order.map((id) => {
           const cluster = GUIDE_CLUSTERS[id];

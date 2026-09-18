@@ -7,6 +7,9 @@ export const DESTINATIONS = [
     blurb: "Week-end soleil : low-cost et compagnies régulières sur la même page.",
     highlight: "Souvent moins de 3 h de vol",
     avgFare: 92,
+    seoTitle: "Vols Paris–Marrakech pas cher (ORY–RAK)",
+    seoDescription:
+      "Comparez les billets Paris–Marrakech dès ~92 € A/R : Transavia, low-cost et compagnies régulières. Réservez chez le partenaire Aeromeld, sans frais cachés.",
   },
   {
     slug: "marseille-alger",
@@ -16,6 +19,9 @@ export const DESTINATIONS = [
     blurb: "Liaison Maghreb très fréquentée : Air Algérie, Transavia et low-cost comparés.",
     highlight: "Vols souvent inférieurs à 2 h",
     avgFare: 78,
+    seoTitle: "Vols Marseille–Alger pas cher (MRS–ALG)",
+    seoDescription:
+      "Billets Marseille–Alger dès ~78 € A/R. Comparez Air Algérie, Transavia et les low-cost, puis finalisez chez le partenaire officiel.",
   },
   {
     slug: "paris-montreal",
@@ -25,6 +31,9 @@ export const DESTINATIONS = [
     blurb: "Transatlantique francophone : Air France, Air Canada et partenaires en un coup d’œil.",
     highlight: "Meilleure fenêtre : avril–juin et septembre",
     avgFare: 445,
+    seoTitle: "Vols Paris–Montréal pas cher (CDG–YUL)",
+    seoDescription:
+      "Comparez les vols Paris–Montréal dès ~445 € A/R. Air France, Air Canada et partenaires : calendrier des prix et réservation chez le partenaire.",
   },
   {
     slug: "paris-new-york",
@@ -34,6 +43,9 @@ export const DESTINATIONS = [
     blurb: "Le classique transatlantique : comparer les long-courriers sans payer plus cher.",
     highlight: "Vols dès ~450 € A/R hors saison",
     avgFare: 468,
+    seoTitle: "Vols Paris–New York pas cher (CDG–JFK)",
+    seoDescription:
+      "Billets Paris–New York dès ~468 € A/R hors saison. Comparez les long-courriers, durées et escales, puis réservez au bon prix chez le partenaire.",
   },
   {
     slug: "paris-dakar",
@@ -43,6 +55,9 @@ export const DESTINATIONS = [
     blurb: "Liaisons fréquentes vers l’Afrique de l’Ouest, avec correspondances ou directs.",
     highlight: "Idéal pour un séjour famille ou affaires",
     avgFare: 312,
+    seoTitle: "Vols Paris–Dakar pas cher (CDG–DKR)",
+    seoDescription:
+      "Comparez les vols Paris–Dakar dès ~312 € A/R : directs et correspondances vers l’Afrique de l’Ouest. Réservation chez le partenaire Aeromeld.",
   },
   {
     slug: "lyon-lisbonne",
@@ -52,6 +67,9 @@ export const DESTINATIONS = [
     blurb: "City-break atlantique : TAP, easyJet et Transavia en un coup d’œil.",
     highlight: "Parfait pour 3 à 4 jours",
     avgFare: 86,
+    seoTitle: "Vols Lyon–Lisbonne pas cher (LYS–LIS)",
+    seoDescription:
+      "City-break Lyon–Lisbonne dès ~86 € A/R. Comparez TAP, easyJet et Transavia, puis consultez nos guides aéroport, hôtels et budget Lisbonne.",
   },
   {
     slug: "paris-tokyo",
@@ -61,6 +79,9 @@ export const DESTINATIONS = [
     blurb: "Long-courrier Asie : comparez durées, escales et compagnies premium.",
     highlight: "Attention aux saisons (cerisiers, Golden Week)",
     avgFare: 720,
+    seoTitle: "Vols Paris–Tokyo pas cher (CDG–NRT)",
+    seoDescription:
+      "Comparez les long-courriers Paris–Tokyo dès ~720 € A/R : durées, escales et classes. Évitez les pics cerisiers et Golden Week, réservez chez le partenaire.",
   },
   {
     slug: "nice-londres",
@@ -70,5 +91,8 @@ export const DESTINATIONS = [
     blurb: "Navette Côte d’Azur : horaires tôt le matin et retours en soirée.",
     highlight: "Aller simple fréquent toute l’année",
     avgFare: 64,
+    seoTitle: "Vols Nice–Londres pas cher (NCE–LHR)",
+    seoDescription:
+      "Navette Nice–Londres dès ~64 €. Comparez les allers simples matin/soir toute l’année et réservez au bon prix chez le partenaire Aeromeld.",
   },
 ] as const;

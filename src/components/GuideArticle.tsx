@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SearchForm } from "@/components/SearchForm";
 import { StayCompare } from "@/components/StayCompare";
+import { useI18n } from "@/components/I18nProvider";
 import { GUIDE_CLUSTERS, relatedGuides, type Guide } from "@/lib/guides";
 
 function isoUtc(d: Date) {
@@ -16,6 +17,7 @@ function plusDays(n: number) {
 }
 
 export function GuideArticle({ guide }: { guide: Guide }) {
+  const { t } = useI18n();
   const checkin = plusDays(21);
   const checkout = plusDays(28);
   const cluster = GUIDE_CLUSTERS[guide.cluster];
@@ -26,14 +28,16 @@ export function GuideArticle({ guide }: { guide: Guide }) {
     <article className="mx-auto w-full max-w-3xl px-4 py-12">
       <p className="text-xs font-semibold uppercase tracking-wide text-orange-600">
         <Link href="/guides" className="hover:underline">
-          Guides
+          {t("nav.guides")}
         </Link>
         {" · "}
         <Link href={`/guides/#${guide.cluster}`} className="hover:underline">
           {cluster.name}
         </Link>
       </p>
-      <p className="mt-3 text-sm text-sky-800">Requête visée : {guide.query}</p>
+      <p className="mt-3 text-sm text-sky-800">
+        {t("guide.queryLabel")} {guide.query}
+      </p>
       <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
         {guide.title}
       </h1>
@@ -47,14 +51,11 @@ export function GuideArticle({ guide }: { guide: Guide }) {
         <figure className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
           <img
             src={`${base}${guide.pinImage}`}
-            alt="10 astuces pour payer son billet d’avion moins cher — visuel Pinterest Aeromeld"
+            alt={guide.title}
             width={768}
             height={1024}
             className="h-auto w-full"
           />
-          <figcaption className="px-4 py-3 text-xs text-slate-500">
-            Visuel à épingler sur Pinterest Pro (lien vers cette page dans la description).
-          </figcaption>
         </figure>
       ) : null}
 
@@ -122,8 +123,8 @@ export function GuideArticle({ guide }: { guide: Guide }) {
       ) : null}
 
       {related.length > 0 ? (
-        <nav className="mt-12 rounded-3xl border border-sky-100 bg-sky-50/80 p-5" aria-label="Cocon sémantique">
-          <p className="text-sm font-semibold text-slate-900">À lire dans le même cocon ({cluster.name})</p>
+        <nav className="mt-12 rounded-3xl border border-sky-100 bg-sky-50/80 p-5" aria-label={t("guide.related")}>
+          <p className="text-sm font-semibold text-slate-900">{t("guide.related")}</p>
           <ul className="mt-3 space-y-2">
             {related.map((item) => (
               <li key={item.slug}>
@@ -136,9 +137,7 @@ export function GuideArticle({ guide }: { guide: Guide }) {
         </nav>
       ) : null}
 
-      <p className="mt-8 text-xs text-slate-500">
-        Aeromeld est un comparateur affilié. La réservation se termine chez le partenaire (vol, hôtel ou voiture).
-      </p>
+      <p className="mt-8 text-xs text-slate-500">{t("guide.affiliateNote")}</p>
     </article>
   );
 }

@@ -1,3 +1,5 @@
+import type { TripType } from "./types";
+
 export function sanitizeEmail(value: string) {
   const email = value.trim().toLowerCase();
   if (email.length > 120) return "";
@@ -30,8 +32,10 @@ export function sanitizeAdults(value: string | number) {
   return Math.min(9, Math.max(1, Math.trunc(n)));
 }
 
-export function sanitizeTrip(value: string | null) {
-  return value === "oneway" ? "oneway" : "roundtrip";
+export function sanitizeTrip(value: string | null): TripType {
+  if (value === "oneway") return "oneway";
+  if (value === "multicity") return "multicity";
+  return "roundtrip";
 }
 
 export function sanitizeCabin(value: string | null): "all" | "economy" | "premium" | "business" | "first" {

@@ -834,3 +834,12 @@ export function relatedGuides(guide: Guide) {
     .map((slug) => getGuide(slug))
     .filter((g): g is Guide => Boolean(g));
 }
+
+export function guidesForRoute(from: string, to: string) {
+  const origin = from.toUpperCase();
+  const dest = to.toUpperCase();
+  const exact = GUIDES.filter((g) => g.from === origin && g.to === dest);
+  const byArrival = GUIDES.filter((g) => g.to === dest && !(g.from === origin && g.to === dest));
+  const extras = GUIDES.filter((g) => g.cluster === "astuces" && !exact.includes(g) && !byArrival.includes(g));
+  return [...exact, ...byArrival, ...extras].slice(0, 6);
+}

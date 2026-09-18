@@ -24,13 +24,19 @@ export function RechercheClient() {
   const to = sanitizeIata(params.get("to") ?? "");
   const depart = sanitizeDate(params.get("depart") ?? "");
   const returnDate = sanitizeDate(params.get("return") ?? "") || undefined;
+  const from2 = sanitizeIata(params.get("from2") ?? "");
+  const to2 = sanitizeIata(params.get("to2") ?? "");
+  const depart2 = sanitizeDate(params.get("depart2") ?? "");
   const adults = String(sanitizeAdults(params.get("adults") ?? "1"));
   const trip = sanitizeTrip(params.get("trip")) as TripType;
   const cabin = sanitizeCabin(params.get("cabin"));
   const error = params.get("error") === "offre";
   const origin = getAirport(from);
   const dest = getAirport(to);
+  const origin2 = getAirport(from2);
+  const dest2 = getAirport(to2);
   const ready = Boolean(origin && dest && depart && from !== to);
+  const multiReady = trip === "multicity" && Boolean(origin2 && dest2 && depart2 && from2 !== to2);
 
   const offers = ready
     ? searchFlights({
@@ -39,7 +45,18 @@ export function RechercheClient() {
         departDate: depart,
         returnDate,
         adults: Number(adults),
-        tripType: trip,
+        tripType: trip === "multicity" ? "oneway" : trip,
+        cabin,
+      })
+    : [];
+
+  const offers2 = multiReady
+    ? searchFlights({
+        from: from2,
+        to: to2,
+        departDate: depart2,
+        adults: Number(adults),
+        tripType: "oneway",
         cabin,
       })
     : [];
@@ -54,6 +71,10 @@ export function RechercheClient() {
           {ready
             ? `${origin?.city} — ${origin?.name} (${from}) → ${dest?.city} — ${dest?.name} (${to}) · ${depart}${
                 trip === "roundtrip" && returnDate ? ` · ${t("results.return")} ${returnDate}` : ""
+              }${
+                multiReady
+                  ? ` · ${t("results.leg2")} ${origin2?.city} (${from2}) → ${dest2?.city} (${to2}) · ${depart2}`
+                  : ""
               } · ${cabin === "all" ? t("cabin.all") : t(`cabin.${cabin}`)}`
             : t("results.complete")}
         </p>
@@ -66,6 +87,9 @@ export function RechercheClient() {
             to,
             depart,
             returnDate,
+            from2,
+            to2,
+            depart2,
             adults,
             trip,
             cabin,
@@ -85,7 +109,7 @@ export function RechercheClient() {
             depart={depart}
             returnDate={returnDate}
             adults={Number(adults)}
-            trip={trip}
+            trip={trip === "multicity" ? "oneway" : trip}
             cabin={cabin}
           />
           <PriceAlert from={from} to={to} destination={`${origin?.city} → ${dest?.city}`} />
@@ -93,7 +117,18 @@ export function RechercheClient() {
       ) : null}
       <Reveal className="mt-6" delayMs={120}>
         {ready ? (
-          <ResultsList offers={offers} cabin={cabin} />
+          <>
+            {trip === "multicity" ? (
+              <h2 className="mb-3 text-lg font-semibold text-slate-900">{t("results.leg1")}</h2>
+            ) : null}
+            <ResultsList offers={offers} cabin={cabin} />
+            {multiReady ? (
+              <div className="mt-8">
+                <h2 className="mb-3 text-lg font-semibold text-slate-900">{t("results.leg2")}</h2>
+                <ResultsList offers={offers2} cabin={cabin} />
+              </div>
+            ) : null}
+          </>
         ) : (
           <p className="rounded-2xl border border-dashed border-slate-300 bg-white/80 p-8 text-center text-slate-600">
             {t("results.empty")}

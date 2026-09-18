@@ -1,12 +1,18 @@
+"use client";
+
+import { useI18n } from "@/components/I18nProvider";
+
 type Props = {
   variant?: "lockup" | "mark";
   className?: string;
 };
 
 export function BrandLogo({ variant = "lockup", className = "" }: Props) {
+  const { t } = useI18n();
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const mark = `${base}/logo-mark.png`;
   const lockup = `${base}/logo.svg`;
+  const alt = t("brand.alt");
 
   if (variant === "mark") {
     return (
@@ -34,7 +40,7 @@ export function BrandLogo({ variant = "lockup", className = "" }: Props) {
       </span>
       <img
         src={lockup}
-        alt="Aeromeld — Compare. Book. Fly."
+        alt={alt}
         width={240}
         height={38}
         className="hidden h-10 w-auto max-w-[240px] shrink-0 md:block"

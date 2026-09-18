@@ -11,7 +11,7 @@ export function SeoJsonLd() {
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
         name: "Aeromeld",
-        alternateName: ["Aeromeld", "Aeromeld Compare. Book. Fly."],
+        alternateName: ["Aeromeld", "Aeromeld Comparer. Réserver. Voyager."],
         inLanguage: ["fr", "en", "es", "pt"],
         description:
           "Comparateur de vols et billets d’avion au meilleur prix, avec réservation chez le partenaire officiel.",
@@ -26,8 +26,8 @@ export function SeoJsonLd() {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
         name: "Aeromeld",
-        alternateName: "Aeromeld Compare. Book. Fly.",
-        slogan: "Compare. Book. Fly.",
+        alternateName: "Aeromeld Comparer. Réserver. Voyager.",
+        slogan: "Comparer. Réserver. Voyager.",
         url: siteUrl,
         logo: {
           "@type": "ImageObject",

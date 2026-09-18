@@ -99,7 +99,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 512,
         height: 512,
-        alt: "Aeromeld — Compare. Book. Fly.",
+        alt: "Aeromeld — Comparer. Réserver. Voyager.",
       },
     ],
   },

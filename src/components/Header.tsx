@@ -48,7 +48,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/40 bg-white/70 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-3 px-4">
-        <Link href="/" className="flex items-center gap-2" aria-label="Aeromeld home" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center gap-2" aria-label={t("nav.homeAria")} onClick={() => setOpen(false)}>
           <BrandLogo />
         </Link>
         <nav className="hidden items-center gap-5 text-sm font-medium text-slate-600 md:flex" aria-label={t("nav.menu")}>
