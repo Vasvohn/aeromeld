@@ -17,6 +17,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "nav.how": "Comment ça marche",
     "nav.guides": "Guides",
     "nav.search": "Rechercher",
+    "nav.menu": "Menu",
+    "nav.close": "Fermer le menu",
     "lang.label": "Langue",
     "footer.tagline":
       "Comparateur affilié de vols. Nous percevons une commission si vous réservez via nos partenaires, sans surcoût pour vous.",
@@ -289,6 +291,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "nav.how": "How it works",
     "nav.guides": "Guides",
     "nav.search": "Search",
+    "nav.menu": "Menu",
+    "nav.close": "Close menu",
     "lang.label": "Language",
     "footer.tagline":
       "Flight affiliate comparison. We may earn a commission if you book via our partners, at no extra cost to you.",
@@ -550,6 +554,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "nav.how": "Cómo funciona",
     "nav.guides": "Guías",
     "nav.search": "Buscar",
+    "nav.menu": "Menú",
+    "nav.close": "Cerrar el menú",
     "lang.label": "Idioma",
     "footer.tagline":
       "Comparador de vuelos con afiliación. Podemos recibir una comisión si reserva a través de nuestros socios, sin coste extra.",
@@ -812,6 +818,8 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "nav.how": "Como funciona",
     "nav.guides": "Guias",
     "nav.search": "Pesquisar",
+    "nav.menu": "Menu",
+    "nav.close": "Fechar o menu",
     "lang.label": "Idioma",
     "footer.tagline":
       "Comparador de voos com afiliação. Podemos receber uma comissão se reservar através dos nossos parceiros, sem custo extra.",
