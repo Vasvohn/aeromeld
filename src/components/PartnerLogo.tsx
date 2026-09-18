@@ -17,7 +17,7 @@ export function PartnerLogo({ id, name }: { id: DisplayPartnerId; name: string }
   const mark = MARKS[id];
 
   return (
-    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-sm" aria-hidden="true">
+    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl" aria-hidden="true">
       <svg viewBox="0 0 40 40" className="h-10 w-10" role="img">
         <title>{name}</title>
         <rect width="40" height="40" rx="10" fill={mark.bg} />
