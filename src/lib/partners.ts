@@ -78,6 +78,21 @@ export const ECONOMYBOOKINGS_SHORT_LINK = "https://economybookings.tpo.mx/NMSpdC
 export const ECONOMYBOOKINGS_PROGRAM_ID = "2018";
 export const ECONOMYBOOKINGS_CAMPAIGN_ID = "10";
 
+export const DISPLAY_PARTNERS = [
+  { id: "aviasales", name: "Aviasales", href: AVIASALES_SHORT_LINK },
+  { id: "kiwi", name: "Kiwi.com", href: KIWI_SHORT_LINK },
+  { id: "getrentacar", name: "GetRentacar", href: GETRENTACAR_SHORT_LINK },
+  { id: "economybookings", name: "Economybookings", href: ECONOMYBOOKINGS_SHORT_LINK },
+  { id: "autoeurope", name: "AutoEurope", href: AUTOEUROPE_SHORT_LINK },
+  { id: "airhelp", name: "AirHelp", href: AIRHELP_SHORT_LINK },
+  { id: "compensair", name: "Compensair", href: COMPENSAIR_SHORT_LINK },
+  { id: "airalo", name: "Airalo", href: AIRALO_SHORT_LINK },
+  { id: "gigsky", name: "GigSky", href: GIGSKY_SHORT_LINK },
+  { id: "kkday", name: "KKday", href: KKDAY_SHORT_LINK },
+] as const;
+
+export type DisplayPartnerId = (typeof DISPLAY_PARTNERS)[number]["id"];
+
 export function affiliateMarker() {
   return (
     process.env.NEXT_PUBLIC_FLYUS_AFFILIATE_MARKER ||

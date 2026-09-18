@@ -69,7 +69,8 @@ body {
   .reveal-in,
   .animate-fade-up,
   .clouds,
-  .logo-mark svg {
+  .logo-mark svg,
+  .partner-marquee {
     animation: none !important;
     opacity: 1;
     transform: none;
@@ -147,6 +148,23 @@ body {
     radial-gradient(circle at 40% 80%, rgb(255 255 255 / 0.1) 0 36px, transparent 38px);
   background-size: 220px 160px;
   animation: drift 22s linear infinite;
+}
+
+@keyframes partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-marquee {
+  animation: partner-marquee 32s linear infinite;
+}
+
+.partner-marquee-mask:hover .partner-marquee {
+  animation-play-state: paused;
 }
 
 header,
