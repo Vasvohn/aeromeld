@@ -262,7 +262,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.hContact": "Contact",
     "legal.hActivity": "Activité",
     "legal.p1":
-      "Nom commercial : Aeromeld. Éditeur et directeur de la publication : ASIATA Martine, auto-entrepreneur. Le numéro SIREN / SIRET et l’adresse du siège social déclaré seront publiés sur cette page dès immatriculation.",
+      "Nom commercial : Aeromeld. SIRET : 888 395 274 00028.",
     "legal.p2":
       "Hébergeur actuel : GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis (service GitHub Pages). Hébergement prévu pour aeromeld.com : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.",
     "legal.p3": "Contact :",
@@ -526,7 +526,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.hContact": "Contact",
     "legal.hActivity": "Activity",
     "legal.p1":
-      "Trade name: Aeromeld. Publisher and publication director: ASIATA Martine, sole trader. The SIREN / SIRET number and registered address will be published on this page once registered.",
+      "Trade name: Aeromeld. SIRET: 888 395 274 00028.",
     "legal.p2":
       "Current host: GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, United States (GitHub Pages). Planned hosting for aeromeld.com: OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.",
     "legal.p3": "Contact:",
@@ -790,7 +790,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.hContact": "Contacto",
     "legal.hActivity": "Actividad",
     "legal.p1":
-      "Nombre comercial: Aeromeld. Editor y director de la publicación: ASIATA Martine, autónomo. El número SIREN / SIRET y la dirección del domicilio social se publicarán en esta página en cuanto estén registrados.",
+      "Nombre comercial: Aeromeld. SIRET: 888 395 274 00028.",
     "legal.p2":
       "Alojamiento actual: GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, Estados Unidos (GitHub Pages). Alojamiento previsto para aeromeld.com: OVH SAS, 2 rue Kellermann, 59100 Roubaix, Francia.",
     "legal.p3": "Contacto:",
@@ -1054,7 +1054,7 @@ export const dictionaries: Record<Locale, Record<string, string>> = {
     "legal.hContact": "Contacto",
     "legal.hActivity": "Atividade",
     "legal.p1":
-      "Nome comercial: Aeromeld. Editor e diretor da publicação: ASIATA Martine, empresário em nome individual. O número SIREN / SIRET e a morada da sede serão publicados nesta página assim que estiverem registados.",
+      "Nome comercial: Aeromeld. SIRET: 888 395 274 00028.",
     "legal.p2":
       "Alojamento atual: GitHub, Inc., 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, Estados Unidos (GitHub Pages). Alojamento previsto para aeromeld.com: OVH SAS, 2 rue Kellermann, 59100 Roubaix, França.",
     "legal.p3": "Contacto:",
